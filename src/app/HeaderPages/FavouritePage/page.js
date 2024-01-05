@@ -13,11 +13,11 @@ import sportsData from '@/dummyData/sports'
 import { clasicRed } from '@/themes/colors'
 
 const FavouritePage = () => {
-  const gartenJson = JSON.parse(localStorage.getItem('garten'))
-  const schoolJson = JSON.parse(localStorage.getItem('school'))
-  const spaceJson = JSON.parse(localStorage.getItem('space'))
-  const funJson = JSON.parse(localStorage.getItem('fun'))
-  const sportsJson = JSON.parse(localStorage.getItem('sports'))
+  const gartenJson = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('garten')) : null;
+  const schoolJson = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('school')) : null;
+  const spaceJson = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('space')) : null;
+  const funJson = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('fun')) : null;
+  const sportsJson = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('sports')) : null;
   const [data, setData] = useState([])
 
   useEffect(() => {
